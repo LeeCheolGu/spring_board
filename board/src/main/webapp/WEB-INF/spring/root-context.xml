@@ -13,9 +13,9 @@
 	
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
 	 	<property name="driverClassName" value="org.mariadb.jdbc.Driver" />
-	 	<property name="url" value="jdbc:mariadb://127.0.0.1:3306" />
-	 	<property name="username" value="kuzuro" />
-	 	<property name="password" value="1111" />
+	 	<property name="url" value="jdbc:mariadb://127.0.0.1:3307/board" />
+	 	<property name="username" value="fecu" />
+	 	<property name="password" value="0443" />
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -28,4 +28,7 @@
 	 	<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
 	
+	<context:component-scan base-package="com.board.domain" />
+	<context:component-scan base-package="com.board.dao" />
+	<context:component-scan base-package="com.board.service" />
 </beans>
